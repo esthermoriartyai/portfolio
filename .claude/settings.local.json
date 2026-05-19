@@ -166,7 +166,9 @@
       "Bash(sips -g pixelWidth -g pixelHeight \"/Users/esther/Portfolio/public/images/saint-loba-mobile-mockup.png\")",
       "Bash(sips -g pixelWidth -g pixelHeight \"/Users/esther/Portfolio/public/images/recipe-pref-laptop-mockup.png\")",
       "Bash(sips -g pixelWidth -g pixelHeight \"/Users/esther/Portfolio/public/images/saint-loba-desktop.png\")",
-      "Bash(python3 -c \"from PIL import Image; img = Image.open\\('/Users/esther/Portfolio/public/images/saint-loba-desktop.png'\\); print\\(img.size\\)\")"
+      "Bash(python3 -c \"from PIL import Image; img = Image.open\\('/Users/esther/Portfolio/public/images/saint-loba-desktop.png'\\); print\\(img.size\\)\")",
+      "Bash(git add *)",
+      "Bash(git commit -m ' *)"
     ]
   }
 }
