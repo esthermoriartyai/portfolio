@@ -1,0 +1,52 @@
+'use client'
+
+import { useRef, useEffect, useState } from 'react'
+
+interface AnimateInViewProps {
+  children: React.ReactNode
+  className?: string
+  delay?: number
+  /** If true, slides up while fading in */
+  slide?: boolean
+}
+
+export default function AnimateInView({
+  children,
+  className = '',
+  delay = 0,
+  slide = true,
+}: AnimateInViewProps) {
+  const ref = useRef<HTMLDivElement>(null)
+  const [visible, setVisible] = useState(false)
+
+  useEffect(() => {
+    const el = ref.current
+    if (!el) return
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setVisible(true)
+          observer.unobserve(el)
+        }
+      },
+      { threshold: 0.1 }
+    )
+    observer.observe(el)
+    return () => observer.disconnect()
+  }, [])
+
+  return (
+    <div
+      ref={ref}
+      className={className}
+      style={{
+        opacity: visible ? 1 : 0,
+        transform: slide ? (visible ? 'translateY(0)' : 'translateY(24px)') : undefined,
+        transition: `opacity 0.6s ease ${delay}ms, transform 0.6s ease ${delay}ms`,
+      }}
+    >
+      {children}
+    </div>
+  )
+}

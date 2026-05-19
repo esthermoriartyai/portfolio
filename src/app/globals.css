@@ -1,0 +1,80 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --blue: #2b5ce6;
+  --blue-60: rgba(43, 92, 230, 0.6);
+  --blue-30: rgba(43, 92, 230, 0.3);
+  --blue-13: rgba(43, 92, 230, 0.13);
+  --blue-06: rgba(43, 92, 230, 0.06);
+  --bg: #fcfbf4;
+  --nav-height-desktop: 60px;
+  --nav-height-mobile: 48px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--blue);
+  font-family: var(--font-inter), 'Inter', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Scroll padding for sticky nav */
+html {
+  scroll-padding-top: var(--nav-height-desktop);
+}
+
+@media (max-width: 768px) {
+  html {
+    scroll-padding-top: var(--nav-height-mobile);
+  }
+}
+
+/* Custom utilities */
+@layer utilities {
+  .text-blue {
+    color: var(--blue);
+  }
+  .text-blue-60 {
+    color: var(--blue-60);
+  }
+  .bg-blue-06 {
+    background-color: var(--blue-06);
+  }
+  .border-blue-13 {
+    border-color: var(--blue-13);
+  }
+  .border-t-blue-13 {
+    border-top-color: var(--blue-13);
+  }
+}
+
+/* Page transition */
+.page-enter {
+  opacity: 0;
+  transform: translateY(12px);
+}
+
+.page-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
