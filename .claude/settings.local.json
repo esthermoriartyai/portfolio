@@ -168,7 +168,10 @@
       "Bash(sips -g pixelWidth -g pixelHeight \"/Users/esther/Portfolio/public/images/saint-loba-desktop.png\")",
       "Bash(python3 -c \"from PIL import Image; img = Image.open\\('/Users/esther/Portfolio/public/images/saint-loba-desktop.png'\\); print\\(img.size\\)\")",
       "Bash(git add *)",
-      "Bash(git commit -m ' *)"
+      "Bash(git commit -m ' *)",
+      "Bash(curl -s http://localhost:3000)",
+      "Bash(kill 87718 87719 471)",
+      "Bash(curl -v http://localhost:3000)"
     ]
   }
 }
