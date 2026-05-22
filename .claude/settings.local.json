@@ -172,7 +172,9 @@
       "Bash(curl -s http://localhost:3000)",
       "Bash(kill 87718 87719 471)",
       "Bash(curl -v http://localhost:3000)",
-      "Bash(npm list *)"
+      "Bash(npm list *)",
+      "Bash(npm install *)",
+      "Bash(git push *)"
     ]
   }
 }
